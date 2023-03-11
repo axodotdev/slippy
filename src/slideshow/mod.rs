@@ -27,18 +27,16 @@ pub fn create_files(html: String, theme_d: Option<Theme>) -> Result<()> {
     let minified_css = Minifier::default().minify(full_css.as_str(), Level::Three);
 
     match minified_css {
-        Err(_) => {
-            AxoSlidesError::CSSMinificationError();
-        }
+        Err(_) => Err(AxoSlidesError::CSSMinificationError {}),
         Ok(css) => {
             create_dist_dir()?;
-            LocalAsset::new("index.js", JS.into()).write(&DIST)?;
-            LocalAsset::new("styles.css", css.into()).write(&DIST)?;
-            LocalAsset::new("index.html", html.into()).write(&DIST)?;
+            LocalAsset::new("index.js", JS.into()).write(DIST)?;
+            LocalAsset::new("styles.css", css.into()).write(DIST)?;
+            LocalAsset::new("index.html", html.into()).write(DIST)?;
+
+            Ok(())
         }
     }
-
-    Ok(())
 }
 
 pub fn create_dist_dir() -> Result<()> {

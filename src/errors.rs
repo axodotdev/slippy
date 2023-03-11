@@ -16,8 +16,11 @@ pub enum AxoSlidesError {
     #[error("failed to read {filedesc} at {path}")]
     FileNotFound { filedesc: String, path: String },
 
+    #[error("File is not markdown")]
+    FileNotMD {},
+
     #[error("There was an issue minifing CSS")]
-    CSSMinificationError(),
+    CSSMinificationError {},
     // #[error("{0}")]
     // Other(String),
 }
