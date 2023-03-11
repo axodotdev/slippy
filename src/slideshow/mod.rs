@@ -1,5 +1,5 @@
 pub mod html;
-pub mod markdown;
+pub mod markdown_parser;
 
 use std::path::Path;
 

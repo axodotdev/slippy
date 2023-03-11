@@ -1,13 +1,13 @@
 #![allow(clippy::uninlined_format_args)]
 
-mod errors;
-mod message;
-mod slideshow;
+pub mod errors;
+pub mod message;
+pub mod slideshow;
 use crate::errors::*;
 use axohtml::{elements::section, html, unsafe_text};
 use clap::{Parser, ValueEnum};
 use message::Message;
-use slideshow::{create_files, html::create_html, markdown::transform_markdown};
+use slideshow::{create_files, html::create_html, markdown_parser::transform_markdown};
 use std::{fs, path::Path};
 
 #[derive(Parser, Debug)]
