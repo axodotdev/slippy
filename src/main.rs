@@ -66,7 +66,7 @@ let compile_options = CompileOptions {
 }
 
 pub fn create_files(html: String) -> Result<()> {
-    let dist = String::from("public".to_owned());
+    let dist = "public".to_owned();
     create_dist_dir(dist.clone())?;
     LocalAsset::new("index.js", JS.into()).write(&dist)?;
     LocalAsset::new("styles.css", CSS.into()).write(&dist)?;
