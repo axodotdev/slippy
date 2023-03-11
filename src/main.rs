@@ -6,6 +6,7 @@ use crate::errors::*;
 use axoasset::LocalAsset;
 use axohtml::{elements::section, html, text, unsafe_text};
 use clap::Parser;
+use markdown::{CompileOptions, ParseOptions, Constructs};
 use message::Message;
 use std::{fs, path::Path};
 
@@ -25,11 +26,26 @@ fn main() -> Result<()> {
         Message::new(message::MessageType::Info, "Creating your slideshow").print();
         let mut slides_html: Vec<Box<section<String>>> = vec![];
         let content = fs::read_to_string(file_path)?;
-        let slides: Vec<&str> = content.as_str().split("---").collect();
+        let slides: Vec<&str> = content.as_str().split("\n---\n").collect();
 
         for slide in slides {
-            let slide_html = markdown::to_html(slide);
-            slides_html.extend(html!(<section>{unsafe_text!(slide_html)}</section>))
+            // Live dangerously / trust the author:
+let compile_options = CompileOptions {
+    allow_dangerous_html: true,
+    allow_dangerous_protocol: true,
+    ..CompileOptions::default()
+  };
+
+  let custom = Constructs {
+    autolink: true,
+    code_fenced: true,
+    gfm_strikethrough: true,
+    gfm_table: true,
+    ..Constructs::gfm()
+  };
+  
+            let slide_html = markdown::to_html_with_options(slide, &markdown::Options {  parse: ParseOptions {constructs: custom, ..ParseOptions::default()}, compile: compile_options }).unwrap();
+            slides_html.extend(html!(<section><div>{unsafe_text!(slide_html)}</div></section>))
         }
 
         let final_html = html!(<html><head>

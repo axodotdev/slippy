@@ -12,7 +12,6 @@ const BACKWARD = [].concat(LEFT, UP, BACKSPACE, PAGE_UP);
 let SELECTION_TYPE = true;
 
 function init() {
-  console.log("sss");
   const progressNode = document.querySelector("#progress");
   const slides = document.querySelectorAll(SLIDES_SELECTOR);
   const totalSlides = slides.length;
@@ -66,10 +65,12 @@ function init() {
       }
     })();
   }
+
   function updateProgress() {
     const percents = ((current + 1) / totalSlides) * 100;
     progressNode.style.width = percents + "%";
   }
+
   function setSelectionType() {
     document
       .querySelector("body")
@@ -80,54 +81,5 @@ function init() {
     SELECTION_TYPE = !SELECTION_TYPE;
   }
 }
-
-window.fit = function fit(node) {
-  if (node.scaled) return;
-  const rect = node.getBoundingClientRect();
-  const w = rect.width;
-  const h = rect.height;
-  const resize = () => {
-    const vw = Math.max(
-      document.documentElement.clientWidth || 0,
-      window.innerWidth || 0
-    );
-    const vh = Math.max(
-      document.documentElement.clientHeight || 0,
-      window.innerHeight || 0
-    );
-    const ratio = w / h;
-    // setting the right scale
-    let newW = vw;
-    let newH = newW / ratio;
-    if (newH > vh) {
-      newH = vh;
-      newW = ratio * newH;
-    }
-    const scale = newW / w;
-    node.style.display = "block";
-    node.style.transformOrigin = "top left";
-    node.style.transform = `scale(${scale}, ${scale})`;
-    // setting the position
-    const wAfterScale = node.getBoundingClientRect().width;
-    const hAfterScale = node.getBoundingClientRect().height;
-    let top = false;
-    let left = false;
-    if (wAfterScale < vw - 10) {
-      top = 0;
-      left = (vw - wAfterScale) / 2;
-    }
-    if (hAfterScale < vh - 10) {
-      top = (vh - hAfterScale) / 2;
-    }
-    if (top !== false || left !== false) {
-      node.style.position = "absolute";
-      node.style.top = top + "px";
-      node.style.left = left + "px";
-    }
-    node.scaled = true;
-  };
-  resize();
-  window.addEventListener("resize", resize);
-};
 
 init();

@@ -8,20 +8,20 @@ body {
     overflow: hidden;
   }
   body.selection-type-1 ::selection {
-    color: #fff !important;
-    background: #000 !important;
+    color: #fff;
+    background: #000;
   }
   
   body.selection-type-2 ::selection {
-    color: #fff !important;
-    background: #f7f7f7 !important;
+    color: #fff;
+    background: #f7f7f7;
   }
   
   .mt1 {
-    margin-top: 1em !important;
+    margin-top: 1em;
   }
   .w500 {
-    max-width: 500px !important;
+    max-width: 500px;
   }
   section {
     position: absolute;
@@ -30,6 +30,11 @@ body {
     opacity: 0;
     transition: opacity 0.6s ease-out;
     visibility: hidden;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   section pre {
     margin: 0;
@@ -64,12 +69,23 @@ body {
   h1,
   h2,
   h3,
-  p,
-  ul {
+  h4,
+  h5,
+  h6,
+  p {
     padding: 0 2em;
     margin: 0.5em 0;
     text-align: center;
   }
+
+  p {
+    padding: 0;
+  }
+
+  blockquote p, li p {
+    text-align: left;
+  }
+
   h1 {
     font-size: 2em;
     line-height: 0.6em;
@@ -84,11 +100,42 @@ body {
     font-size: 1.2em;
   }
   p code {
-    font-family: inherit;
-    background: #ccc;
+    color: #d6deeb;
+    background: rgba(29, 59, 83, 0.99);
     padding: 0 0.2em;
   }
   
+  blockquote {
+    border-style: solid;
+    border-width: 0;
+    --tw-border-opacity: 1;
+    padding-left: 1.5rem;
+    border-left-width: 2px;
+    border-color: #f57070;
+    --tw-text-opacity: 1;
+    color: rgb(148 163 184/var(--tw-text-opacity));
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+  table td,  table th {
+    padding: 15px;
+  }
+  table thead th {
+    background-color: #54585d;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 13px;
+    border: 1px solid #54585d;
+  }
+  table tbody td {
+    color: #636363;
+    border: 1px solid #dddfe1;
+  }
+  table tbody tr {
+    background-color: #f9fafb;
+  }
 
   /* // PRISM */
 
