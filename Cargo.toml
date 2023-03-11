@@ -1,10 +1,10 @@
 [package]
-name = "axolotlsay"
-description = "💬 a CLI for learning to distribute CLIs in rust"
+name = "axoslides"
+description = "🖼 the easiest way to make a presentation"
 version = "0.0.0"
 edition = "2021"
 license = "MIT OR Apache-2.0"
-repository = "https://github.com/axodotdev/axolotlsay"
+repository = "https://github.com/axodotdev/axoslides"
 
 [dependencies]
 axoasset = "0.0.1"
@@ -13,7 +13,6 @@ clap = { version = "4.1.4", features = ["derive"] }
 console = "0.15.5"
 markdown = "1.0.0-alpha.7"
 thiserror = "1.0.39"
-unicode-width = "0.1.10"
 
 [dev-dependencies]
 assert_cmd = "2.0.8"

@@ -1,3 +1,7 @@
+## This is the test slideshow to test `axoslides`
+
+---
+
 # Heading 1
 
 ## Heading 2
