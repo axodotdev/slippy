@@ -1,11 +1,23 @@
 # axoslides
 
-> 🖼 the simplest presentation tool
+> 🖼 the easiest way to make slideshows
 
 ## Usage
 
 ```sh
 > axoslides deck.md
+```
+
+```sh
+Usage: axoslides [OPTIONS] <FILE>
+
+Arguments:
+  <FILE>
+
+Options:
+  -t, --theme <THEME>  [possible values: light, dark, cupcake]
+  -h, --help           Print help
+  -V, --version        Print version
 ```
 
 ## License

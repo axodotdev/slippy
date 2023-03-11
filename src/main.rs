@@ -52,7 +52,11 @@ fn main() -> Result<()> {
 
     let final_html = create_html(slides_html);
     create_files(final_html, args.theme)?;
-    Message::new(message::MessageType::Success, "Your slides are done!").print();
+    Message::new(
+        message::MessageType::Success,
+        "Slideshow created in the public directory",
+    )
+    .print();
 
     Ok(())
 }
