@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks so much for your interest in contributing to `axohtml`. We are excited
+Thanks so much for your interest in contributing to `axoslides`. We are excited
 about the building a community of contributors to the project. Here's some
 guiding principles for working with us:
 
@@ -20,12 +20,12 @@ that your fix works.
 **3. Overcommunicate**
 
 In all scenarios, please provide as much context as possible- you may not think
-it's important but it may be! 
+it's important but it may be!
 
 **4. Patience**
 
 Axo is a very small company, it's possible that we may not be able to
-immediately prioritize your issue. We are excite to develop a community of 
+immediately prioritize your issue. We are excite to develop a community of
 contributors around this project, but it won't always be on the top of our to-do
 list, even if we wish it could be.
 
