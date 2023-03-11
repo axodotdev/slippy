@@ -12,13 +12,12 @@ const BACKWARD = [].concat(LEFT, UP, BACKSPACE, PAGE_UP);
 let SELECTION_TYPE = true;
 
 function init() {
-  const progressNode = document.querySelector("#progress");
+  const progressNode = document.querySelector(".progress-bar");
   const slides = document.querySelectorAll(SLIDES_SELECTOR);
   const totalSlides = slides.length;
   let current = -1;
 
   showSlide(parseInt(window.location.hash.substr(1)) || 0);
-  setSelectionType();
 
   document.querySelector("body").addEventListener("keyup", (e) => {
     const key = e.key || e.keyCode;
@@ -49,7 +48,6 @@ function init() {
     const postSlide = () => {
       updateProgress();
       setTimeout(() => {
-        fit(slides[current]);
         window.location.href = "#" + current;
       }, 1);
     };
@@ -69,16 +67,6 @@ function init() {
   function updateProgress() {
     const percents = ((current + 1) / totalSlides) * 100;
     progressNode.style.width = percents + "%";
-  }
-
-  function setSelectionType() {
-    document
-      .querySelector("body")
-      .setAttribute(
-        "class",
-        SELECTION_TYPE ? "selection-type-1" : "selection-type-2"
-      );
-    SELECTION_TYPE = !SELECTION_TYPE;
   }
 }
 

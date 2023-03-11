@@ -9,22 +9,7 @@ body {
   font-family: "Inter", sans-serif;
   overflow: hidden;
 }
-body.selection-type-1 ::selection {
-  color: #fff;
-  background: #000;
-}
 
-body.selection-type-2 ::selection {
-  color: #fff;
-  background: #f7f7f7;
-}
-
-.mt1 {
-  margin-top: 1em;
-}
-.w500 {
-  max-width: 500px;
-}
 section {
   position: absolute;
   top: 0;
@@ -48,18 +33,17 @@ section code {
   padding: 0;
   font-size: 1em;
 }
-#progress {
+.progress-bar {
   position: absolute;
   bottom: 0;
   left: 0;
   height: 4px;
   z-index: 10;
-  background: #00009f;
   transition: width 0.5s ease-out;
 }
 a {
   text-decoration: underline;
-  color: #00009f;
+  font-weight: 500;
 }
 ul {
   list-style: none;
@@ -109,20 +93,14 @@ h3 code,
 h4 code,
 h5 code,
 h6 code {
-  color: #d6deeb;
-  background: rgba(29, 59, 83, 0.99);
   padding: 0 0.2em;
 }
 
 blockquote {
   border-style: solid;
   border-width: 0;
-  --tw-border-opacity: 1;
   padding-left: 1.5rem;
   border-left-width: 2px;
-  border-color: #f57070;
-  --tw-text-opacity: 1;
-  color: rgb(148 163 184 / var(--tw-text-opacity));
 }
 
 table {
@@ -133,168 +111,53 @@ table th {
   padding: 15px;
 }
 table thead th {
-  background-color: #54585d;
-  color: #ffffff;
   font-weight: bold;
   font-size: 13px;
-  border: 1px solid #54585d;
-}
-table tbody td {
-  color: #636363;
-  border: 1px solid #dddfe1;
-}
-table tbody tr {
-  background-color: #f9fafb;
 }
 
-/* // PRISM */
-
-code[class*="language-"],
-pre[class*="language-"] {
-  color: #d6deeb;
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  line-height: 1.5;
-
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
+kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-width: 1px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-radius: 0.5rem;
+  border-bottom-width: 2px;
+  min-height: 2.2em;
+  min-width: 2.2em;
+  border-style: solid;
 }
 
-pre[class*="language-"]::-moz-selection,
-pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection,
-code[class*="language-"] ::-moz-selection {
-  text-shadow: none;
-  background: rgba(29, 59, 83, 0.99);
+table :where(th, td) {
+  white-space: nowrap;
+  padding: 1rem;
+  vertical-align: middle;
 }
 
-pre[class*="language-"]::selection,
-pre[class*="language-"] ::selection,
-code[class*="language-"]::selection,
-code[class*="language-"] ::selection {
-  text-shadow: none;
-  background: rgba(29, 59, 83, 0.99);
+table :where(thead, tbody, tfoot) :where(tr:not(:last-child) :where(th, td)) {
+  border-bottom-width: 1px;
 }
 
-@media print {
-  code[class*="language-"],
-  pre[class*="language-"] {
-    text-shadow: none;
-  }
+table :where(thead, tfoot) :where(th, td) {
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
-/* Code blocks */
-pre[class*="language-"] {
-  padding: 1em;
-  margin: 0.5em 0;
-  overflow: auto;
+table tr:first-child td:last-child {
+  border-top-right-radius: 0.5rem;
 }
 
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-  color: white;
-  background: #011627;
+table tr:first-child td:first-child {
+  border-top-left-radius: 0.5rem;
 }
 
-:not(pre) > code[class*="language-"] {
-  padding: 0.1em;
-  border-radius: 0.3em;
-  white-space: normal;
+table tr:last-child td:last-child {
+  border-bottom-right-radius: 0.5rem;
 }
 
-.token.comment,
-.token.prolog,
-.token.cdata {
-  color: rgb(99, 119, 119);
-  font-style: italic;
-}
-
-.token.punctuation {
-  color: rgb(199, 146, 234);
-}
-
-.namespace {
-  color: rgb(178, 204, 214);
-}
-
-.token.deleted {
-  color: rgba(239, 83, 80, 0.56);
-  font-style: italic;
-}
-
-.token.symbol,
-.token.property {
-  color: rgb(128, 203, 196);
-}
-
-.token.tag,
-.token.operator,
-.token.keyword {
-  color: rgb(127, 219, 202);
-}
-
-.token.boolean {
-  color: rgb(255, 88, 116);
-}
-
-.token.number {
-  color: rgb(247, 140, 108);
-}
-
-.token.constant,
-.token.function,
-.token.builtin,
-.token.char {
-  color: rgb(130, 170, 255);
-}
-
-.token.selector,
-.token.doctype {
-  color: rgb(199, 146, 234);
-  font-style: italic;
-}
-
-.token.attr-name,
-.token.inserted {
-  color: rgb(173, 219, 103);
-  font-style: italic;
-}
-
-.token.string,
-.token.url,
-.token.entity,
-.language-css .token.string,
-.style .token.string {
-  color: rgb(173, 219, 103);
-}
-
-.token.class-name,
-.token.atrule,
-.token.attr-value {
-  color: rgb(255, 203, 139);
-}
-
-.token.regex,
-.token.important,
-.token.variable {
-  color: rgb(214, 222, 235);
-}
-
-.token.important,
-.token.bold {
-  font-weight: bold;
-}
-
-.token.italic {
-  font-style: italic;
+table tr:last-child td:first-child {
+  border-bottom-left-radius: 0.5rem;
 }

@@ -74,6 +74,7 @@ Strike-through
 | one | two | three |
 | --- | --- | ----- |
 | yes | no  | yes   |
+| yes | no  | yes   |
 
 ---
 

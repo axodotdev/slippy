@@ -11,6 +11,7 @@ axoasset = "0.0.1"
 axohtml = "0.4.1"
 clap = { version = "4.1.4", features = ["derive"] }
 console = "0.15.5"
+css-minify = "0.3.1"
 markdown = "1.0.0-alpha.7"
 thiserror = "1.0.39"
 

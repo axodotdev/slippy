@@ -13,6 +13,11 @@ pub enum AxoSlidesError {
     #[error(transparent)]
     AxoAsset(#[from] axoasset::AxoassetError),
 
-    #[error("{0}")]
-    Other(String),
+    #[error("failed to read {filedesc} at {path}")]
+    FileNotFound { filedesc: String, path: String },
+
+    #[error("There was an issue minifing CSS")]
+    CSSMinificationError(),
+    // #[error("{0}")]
+    // Other(String),
 }
