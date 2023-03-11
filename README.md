@@ -5,10 +5,6 @@
 ## Usage
 
 ```sh
-> axoslides deck.md
-```
-
-```sh
 Usage: axoslides [OPTIONS] <FILE>
 
 Arguments:
@@ -19,6 +15,28 @@ Options:
   -h, --help           Print help
   -V, --version        Print version
 ```
+
+### Basic usage
+
+```sh
+> axoslides deck.md
+```
+
+### Changing the theme
+
+```sh
+> axoslides --theme=dark deck.md
+```
+
+Current themes are:
+
+- light (default)
+- dark
+- cupcake
+
+### Using local assets
+
+Any images or assets that you want to be on your published slideshow must be in the `static` folder, this folder will be copied over to the public directory, ready to be uploaded to any static file hoster.
 
 ## License
 

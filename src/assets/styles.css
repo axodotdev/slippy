@@ -17,7 +17,9 @@ section {
   opacity: 0;
   transition: opacity 0.6s ease-out;
   visibility: hidden;
-  width: 100vw;
+  max-width: 768px;
+  left: 50%;
+  transform: translateX(-50%);
   height: 100vh;
   display: flex;
   align-items: center;
@@ -33,11 +35,12 @@ section code {
   padding: 0;
   font-size: 1em;
 }
+
 .progress-bar {
   position: absolute;
   bottom: 0;
   left: 0;
-  height: 4px;
+  height: 12px;
   z-index: 10;
   transition: width 0.5s ease-out;
 }
@@ -62,6 +65,7 @@ p {
   padding: 0 2em;
   margin: 0.5em 0;
   text-align: center;
+  font-size: 20px;
 }
 
 p {
@@ -74,17 +78,17 @@ li p {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 2.8em;
   line-height: 0.6em;
 }
 h1 small {
   font-size: 0.4em;
 }
 h2 {
-  font-size: 1.6em;
+  font-size: 2.2em;
 }
 h3 {
-  font-size: 1.2em;
+  font-size: 1.8em;
 }
 p code,
 h1 code,
@@ -103,18 +107,6 @@ blockquote {
   border-left-width: 2px;
 }
 
-table {
-  border-collapse: collapse;
-}
-table td,
-table th {
-  padding: 15px;
-}
-table thead th {
-  font-weight: bold;
-  font-size: 13px;
-}
-
 kbd {
   display: inline-flex;
   align-items: center;
@@ -129,7 +121,8 @@ kbd {
   border-style: solid;
 }
 
-table :where(th, td) {
+table th,
+table td {
   white-space: nowrap;
   padding: 1rem;
   vertical-align: middle;
@@ -139,7 +132,8 @@ table :where(thead, tbody, tfoot) :where(tr:not(:last-child) :where(th, td)) {
   border-bottom-width: 1px;
 }
 
-table :where(thead, tfoot) :where(th, td) {
+table thead th td,
+table tfoot th td {
   font-size: 0.75rem;
   line-height: 1rem;
   font-weight: 700;
