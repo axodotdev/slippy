@@ -13,6 +13,7 @@ const DARK_THEME: &str = include_str!("../assets/themes/dark.css");
 const CUPCAKE_THEME: &str = include_str!("../assets/themes/cupcake.css");
 const JS: &str = include_str!("../assets/slide.js");
 const DIST: &str = "public";
+const STATIC: &str = "static";
 
 pub fn create_files(html: String, theme_d: Option<Theme>) -> Result<()> {
     let theme_css = match theme_d {
@@ -33,6 +34,7 @@ pub fn create_files(html: String, theme_d: Option<Theme>) -> Result<()> {
             LocalAsset::new("index.js", JS.into()).write(DIST)?;
             LocalAsset::new("styles.css", css.into()).write(DIST)?;
             LocalAsset::new("index.html", html.into()).write(DIST)?;
+            copy_static()?;
 
             Ok(())
         }
@@ -44,5 +46,14 @@ pub fn create_dist_dir() -> Result<()> {
         std::fs::create_dir_all(DIST)?;
     }
 
+    Ok(())
+}
+
+pub fn copy_static() -> Result<()> {
+    if Path::new(STATIC).exists() {
+        let mut options = fs_extra::dir::CopyOptions::new();
+        options.overwrite = true;
+        fs_extra::copy_items(&[STATIC], DIST, &options)?;
+    }
     Ok(())
 }

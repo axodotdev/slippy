@@ -29,7 +29,7 @@ fn main() -> Result<()> {
     let args = Args::parse();
     let file_path = Path::new(&args.file);
 
-    if Path::exists(file_path) {
+    if !Path::exists(file_path) {
         return Err(AxoSlidesError::FileNotFound {
             filedesc: "markdown slideshow".to_owned(),
             path: args.file,

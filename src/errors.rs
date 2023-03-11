@@ -19,6 +19,9 @@ pub enum AxoSlidesError {
     #[error("File is not markdown")]
     FileNotMD {},
 
+    #[error(transparent)]
+    FSExtra(#[from] fs_extra::error::Error),
+
     #[error("There was an issue minifing CSS")]
     CSSMinificationError {},
     // #[error("{0}")]
