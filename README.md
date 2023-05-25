@@ -34,6 +34,10 @@ Current themes are:
 - dark
 - cupcake
 
+### Adding custom css
+
+By placing a `deck.css` in the root axo-slides will automatically recognize it and place it at the contents at the end of the CSS
+
 ### Using local assets
 
 Any images or assets that you want to be on your published slideshow must be in the `static` folder, this folder will be copied over to the public directory, ready to be uploaded to any static file hoster.

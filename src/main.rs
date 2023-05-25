@@ -44,7 +44,6 @@ fn main() -> Result<()> {
     let mut slides_html: Vec<Box<section<String>>> = vec![];
     let content = fs::read_to_string(file_path)?;
     let slides: Vec<&str> = content.as_str().split("\n---\n").collect();
-
     for slide in slides {
         let slide_html = transform_markdown(slide);
         slides_html.extend(html!(<section><div>{unsafe_text!(slide_html)}</div></section>))

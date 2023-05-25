@@ -6,6 +6,7 @@ use std::path::Path;
 use crate::{errors::*, Theme};
 use axoasset::LocalAsset;
 use css_minify::optimizations::{Level, Minifier};
+use std::fs;
 
 const CSS: &str = include_str!("../assets/styles.css");
 const LIGHT_THEME: &str = include_str!("../assets/themes/light.css");
@@ -24,7 +25,14 @@ pub fn create_files(html: String, theme_d: Option<Theme>) -> Result<()> {
         },
         None => LIGHT_THEME,
     };
-    let full_css = format!("{} {}", CSS, theme_css);
+    let additional_css_promise = fs::read_to_string("deck.css");
+
+    let additional_css = match additional_css_promise {
+        Ok(css) => css,
+        Err(_) => "".to_string(),
+    };
+
+    let full_css = format!("{} {} {}", CSS, theme_css, additional_css);
     let minified_css = Minifier::default().minify(full_css.as_str(), Level::Three);
 
     match minified_css {
