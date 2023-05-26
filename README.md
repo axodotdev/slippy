@@ -33,6 +33,7 @@ Current themes are:
 - light (default)
 - dark
 - cupcake
+- axo
 
 ### Adding custom css
 
