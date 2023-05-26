@@ -1,4 +1,4 @@
-## This is the test slideshow to test `axoslides`
+## This is the test slideshow to test `slippy`
 
 ---
 

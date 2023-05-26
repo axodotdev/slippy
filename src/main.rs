@@ -31,14 +31,14 @@ fn main() -> Result<()> {
     let file_path = Path::new(&args.file);
 
     if !Path::exists(file_path) {
-        return Err(AxoSlidesError::FileNotFound {
+        return Err(SlippyError::FileNotFound {
             filedesc: "markdown slideshow".to_owned(),
             path: args.file,
         });
     }
 
     if file_path.extension().unwrap().to_str() != Some("md") {
-        return Err(AxoSlidesError::FileNotMD {});
+        return Err(SlippyError::FileNotMD {});
     }
 
     Message::new(message::MessageType::Info, "Creating your slideshow").print();

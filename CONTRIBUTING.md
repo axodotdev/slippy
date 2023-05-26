@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks so much for your interest in contributing to `axoslides`. We are excited
+Thanks so much for your interest in contributing to `slippy`. We are excited
 about the building a community of contributors to the project. Here's some
 guiding principles for working with us:
 

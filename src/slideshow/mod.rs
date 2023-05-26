@@ -38,7 +38,7 @@ pub fn create_files(html: String, theme_d: Option<Theme>) -> Result<()> {
     let minified_css = Minifier::default().minify(full_css.as_str(), Level::Three);
 
     match minified_css {
-        Err(_) => Err(AxoSlidesError::CSSMinificationError {}),
+        Err(_) => Err(SlippyError::CSSMinificationError {}),
         Ok(css) => {
             create_dist_dir()?;
             LocalAsset::new("index.js", JS.into()).write(DIST)?;

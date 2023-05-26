@@ -110,21 +110,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "axoslides"
-version = "0.0.0"
-dependencies = [
- "assert_cmd",
- "axoasset",
- "axohtml",
- "clap",
- "console",
- "css-minify",
- "fs_extra",
- "markdown",
- "thiserror",
-]
-
-[[package]]
 name = "base64"
 version = "0.21.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1564,6 +1549,21 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6528351c9bc8ab22353f9d776db39a20288e8d6c37ef8cfe3317cf875eecfc2d"
 dependencies = [
  "autocfg",
+]
+
+[[package]]
+name = "slippy"
+version = "0.0.0"
+dependencies = [
+ "assert_cmd",
+ "axoasset",
+ "axohtml",
+ "clap",
+ "console",
+ "css-minify",
+ "fs_extra",
+ "markdown",
+ "thiserror",
 ]
 
 [[package]]

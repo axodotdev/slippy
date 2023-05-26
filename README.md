@@ -5,7 +5,7 @@
 ## Usage
 
 ```sh
-Usage: axoslides [OPTIONS] <FILE>
+Usage: slippy [OPTIONS] <FILE>
 
 Arguments:
   <FILE>
@@ -19,13 +19,13 @@ Options:
 ### Basic usage
 
 ```sh
-> axoslides deck.md
+> slippy deck.md
 ```
 
 ### Changing the theme
 
 ```sh
-> axoslides --theme=dark deck.md
+> slippy --theme=dark deck.md
 ```
 
 Current themes are:

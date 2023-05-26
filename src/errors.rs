@@ -1,9 +1,9 @@
 use thiserror::Error;
 
-pub type Result<T> = std::result::Result<T, AxoSlidesError>;
+pub type Result<T> = std::result::Result<T, SlippyError>;
 
 #[derive(Debug, Error)]
-pub enum AxoSlidesError {
+pub enum SlippyError {
     #[error(transparent)]
     Io(#[from] std::io::Error),
 
