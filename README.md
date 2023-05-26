@@ -1,4 +1,4 @@
-![Group 13](https://github.com/axodotdev/slippy/assets/1051509/d6df480a-72d1-43f6-a11f-ac9a4a3bcc1d)
+<img src="https://github.com/axodotdev/slippy/assets/1051509/d6df480a-72d1-43f6-a11f-ac9a4a3bcc1d" width="300"/>
 
 > 🖼 the easiest way to make slideshows
 
