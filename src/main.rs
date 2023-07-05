@@ -24,6 +24,7 @@ pub enum Theme {
     Dark,
     Cupcake,
     Axo,
+    Nash,
 }
 
 fn main() -> Result<()> {

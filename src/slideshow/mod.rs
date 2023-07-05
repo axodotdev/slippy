@@ -11,6 +11,7 @@ use std::fs;
 const CSS: &str = include_str!("../assets/styles.css");
 const LIGHT_THEME: &str = include_str!("../assets/themes/light.css");
 const DARK_THEME: &str = include_str!("../assets/themes/dark.css");
+const NASH_THEME: &str = include_str!("../assets/themes/nash.css");
 const CUPCAKE_THEME: &str = include_str!("../assets/themes/cupcake.css");
 const AXO_THEME: &str = include_str!("../assets/themes/axo.css");
 const JS: &str = include_str!("../assets/slide.js");
@@ -24,6 +25,7 @@ pub fn create_files(html: String, theme_d: Option<Theme>) -> Result<()> {
             Theme::Dark => DARK_THEME,
             Theme::Cupcake => CUPCAKE_THEME,
             Theme::Axo => AXO_THEME,
+            Theme::Nash => NASH_THEME,
         },
         None => LIGHT_THEME,
     };
