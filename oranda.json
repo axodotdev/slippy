@@ -1,3 +1,8 @@
 {
-  "path_prefix": "slippy"
+  "build": {
+    "path_prefix": "oranda"
+  },
+  "styles": {
+    "theme": "hacker"
+  }
 }
