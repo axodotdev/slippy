@@ -1,8 +1,8 @@
-## Rust for the rest of us
+# Rust for the rest of us
 
 ---
 
-## 👋
+# 👋
 
 My name is Sara
 

@@ -34,6 +34,7 @@ Current themes are:
 - dark
 - cupcake
 - axo
+- nash
 
 ### Adding custom css
 

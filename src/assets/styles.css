@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap");
 
 body {
   width: 100%;
@@ -17,7 +18,7 @@ section {
   opacity: 0;
   transition: opacity 0.6s ease-out;
   visibility: hidden;
-  max-width: 768px;
+  width: 80vw;
   left: 50%;
   transform: translateX(-50%);
   height: 100vh;
@@ -78,17 +79,17 @@ li p {
 }
 
 h1 {
-  font-size: 2.8em;
+  font-size: 80px;
   line-height: 0.6em;
 }
 h1 small {
   font-size: 0.4em;
 }
 h2 {
-  font-size: 2.2em;
+  font-size: 3em;
 }
 h3 {
-  font-size: 1.8em;
+  font-size: 2.4em;
 }
 p code,
 h1 code,
